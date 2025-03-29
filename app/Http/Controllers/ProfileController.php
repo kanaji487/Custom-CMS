@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 use Inertia\Response;
+use App\Models\User;
 
 class ProfileController extends Controller
 {
@@ -59,5 +60,14 @@ class ProfileController extends Controller
         $request->session()->regenerateToken();
 
         return Redirect::to('/');
+    }
+
+    public function list()
+    {
+        $users = User::select('id', 'name', 'email', 'image', 'created_at', 'updated_at')->get();
+        
+        return Inertia::render('Dashboard', [
+            'users' => $users
+        ]);
     }
 }

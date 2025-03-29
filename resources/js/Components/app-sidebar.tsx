@@ -1,6 +1,6 @@
 "use client"
 
-import * as React from "react"
+import * as React from "react";
 import {
   AudioWaveform,
   BookOpen,
@@ -15,7 +15,6 @@ import {
   ChartNoAxesCombined,
 } from "lucide-react";
 import { NavMain } from "@/Components/nav-main";
-import { NavProjects } from "@/Components/nav-projects";
 import { NavUser } from "@/Components/nav-user";
 import { TeamSwitcher } from "@/Components/team-switcher";
 import {
@@ -24,9 +23,7 @@ import {
   SidebarFooter,
   SidebarHeader,
   SidebarRail,
-} from "@/Components/ui/sidebar"
-
-// This is sample data.
+} from "@/Components/ui/sidebar";
 const data = {
   user: {
     name: "shadcn",
@@ -67,7 +64,7 @@ const data = {
       icon: BookOpen
     }
   ]
-}
+};
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
@@ -77,7 +74,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
-        {/* <NavProjects projects={data.projects} /> */}
       </SidebarContent>
       <SidebarFooter>
         <NavUser />
